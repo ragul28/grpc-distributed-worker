@@ -28,3 +28,15 @@ func (n Server) AssignTask(request *proto.Request, server proto.NodeService_Assi
 		}
 	}
 }
+
+var server *Server
+
+// GetNodeServiceGrpcServer singleton service
+func GetGrpcServer() *Server {
+	if server == nil {
+		server = &Server{
+			CmdChannel: make(chan string),
+		}
+	}
+	return server
+}
