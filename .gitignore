@@ -1,0 +1,22 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+# Ignore `bin` dir
+bin/
+dist/
+.data/
+.vscode/
+
+# Unignore files
+!Dockerfile
+!Makefile
+!LICENSE
+
+# Ignore files
+checklist.md
