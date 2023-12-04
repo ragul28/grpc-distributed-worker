@@ -15,3 +15,12 @@ type ControllerNode struct {
 	svr     *grpc.Server // grpc server
 	nodeSvr *Server      // node service
 }
+
+func (n *ControllerNode) Init() (err error) {
+	// grpc server listener with port as 50051
+	n.ln, err = net.Listen("tcp", ":50050")
+	if err != nil {
+		return err
+	}
+	return nil
+}
